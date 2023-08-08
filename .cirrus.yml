@@ -28,5 +28,3 @@ skip: $CIRRUS_BRANCH == 'main'
       - echo "============================"
       - echo "Syncing Complete!"
       - echo "============================"
-
-  Build_script:
