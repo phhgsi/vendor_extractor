@@ -7,7 +7,7 @@ workflow:
 
 jobs:
   generate_vendor_tree:
-    docker_image: your_docker_image_with_required_tools
+    docker_image: ghcr.io/sushrut1101/docker:arch
     steps:
       - name: Clone ROM repository
         command: |
