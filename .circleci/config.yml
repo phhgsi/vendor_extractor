@@ -1,0 +1,25 @@
+# .cirrus.yml
+
+workflow:
+  main:
+    jobs:
+      - generate_vendor_tree
+
+jobs:
+  generate_vendor_tree:
+    docker_image: your_docker_image_with_required_tools
+    steps:
+      - name: Clone ROM repository
+        command: |
+          git clone https://github.com/rom-org/rom-repo.git /tmp/rom-repo
+
+      - name: Generate Vendor Tree
+        command: |
+          cd /tmp/rom-repo
+          # Add commands to generate the vendor tree from the ROM dump
+
+      - name: Upload Vendor Tree Artifact
+        artifacts:
+          paths:
+            - /tmp/rom-repo/vendor
+
