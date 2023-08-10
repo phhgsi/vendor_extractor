@@ -1,17 +1,19 @@
 version: 2.1
-
-jobs:
-  print-a-message:
+executors:
+  my-custom-executor:
     docker:
-      - image: cimg/base:2022.03
-    parameters:
-      message:
-        type: string
+      - image: ghcr.io/sushrut1101/docker:arch
+        
+jobs:
+  my-job-name:
+
+    executor: my-custom-executor
     steps:
-      - run: echo << parameters.message >>
+      - checkout
+      - run: |
+          # echo Hello, World!
 
 workflows:
-  my-workflow:
+  my-custom-workflow:
     jobs:
-      - print-a-message:
-          message: Hello!
+      - my-job-name
