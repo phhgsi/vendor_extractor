@@ -11,13 +11,13 @@ jobs:
     steps:
       - checkout
       - run: |
-         mkdir -p ~/.ssh
-         ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+         ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
          ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-         ssh-keygen -t ed25519 -C as3776958@gmail.com
-         cat ~/.ssh/id_rsa
-         
-         sleep 200
+         ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+         chmod 600 ~/.ssh/id_rsa
+         cd ~/.ssh
+         cat id_rsa.pub
+        
          git clone https://gitlab.com/Romdumprx/oneplus/cph2381.git 
          git clone https://github.com/nobiraja/android_device_oneplus_CPH2381.git device/oneplus/CPH2381
          git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
