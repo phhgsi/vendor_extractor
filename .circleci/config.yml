@@ -32,7 +32,7 @@ jobs:
          ./setup-makefiles.sh
          ./extract-files.sh ~/holi
 jobs:
-  my-upload-name:
+  my-jab-name:
 
     executor: my-custom-executor
     steps:
@@ -50,4 +50,4 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
-      - my-upload-name
+      - my-jab-name
