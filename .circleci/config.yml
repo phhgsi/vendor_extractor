@@ -16,18 +16,29 @@ jobs:
          chmod 600 ~/.ssh/id_rsa
          cd ~/.ssh
          cat id_rsa.pub
+         git config --global user.name "nobiraja"
+         git config --global user.email "as3776958@gmail.com"
+      
         
-         
+         git clone 
          git clone https://github.com/nobiraja/android_device_oneplus_CPH2381.git device/oneplus/CPH2381
          git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
          git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
          ls
          cd device/oneplus/CPH2381
          ls
-         chmod u+x setup-makefile.sh
+         chmod u+x setup-makefiles.sh
          chmod u+x extract-files.sh
          ./setup-makefile.sh
          ./extract-files.sh ~/cph2381
+         cd
+         cd vendor/oneplus/CPH2381
+         git init 
+         git add .
+         git commit -m "first commit"
+         git branch -M main 
+         git remote add origin git@github.com:nobiraja/vendor_CPH2381.git
+         git push -u origin main
 workflows:
   my-custom-workflow:
     jobs:
