@@ -31,9 +31,15 @@ jobs:
          chmod u+x extract-files.sh
          ./setup-makefiles.sh
          ./extract-files.sh ~/holi
+         ls
+         cd ..
+         ls
+         cd ..
+         ls 
+         cd ..
 
          ls
-         cd ~/vendor/oneplus/CPH2381
+         cd vendor/oneplus/CPH2381
          ls
          git init 
          git add .
