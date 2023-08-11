@@ -29,7 +29,7 @@ jobs:
          ls
          chmod u+x setup-makefiles.sh
          chmod u+x extract-files.sh
-         ./setup-makefile.sh
+         ./setup-makefiles.sh
          ./extract-files.sh ~/holi
          cd
          cd vendor/oneplus/CPH2381
