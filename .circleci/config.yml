@@ -31,7 +31,14 @@ jobs:
          chmod u+x extract-files.sh
          ./setup-makefiles.sh
          ./extract-files.sh ~/holi
-         cd
+jobs:
+  my-upload-name:
+
+    executor: my-custom-executor
+    steps:
+      - checkout
+      - run: |
+         ls
          cd vendor/oneplus/CPH2381
          git init 
          git add .
@@ -43,3 +50,4 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
+      - my-upload-name
