@@ -31,15 +31,10 @@ jobs:
          chmod u+x extract-files.sh
          ./setup-makefiles.sh
          ./extract-files.sh ~/holi
-jobs:
-  my-jab-name:
 
-    executor: my-custom-executor
-    steps:
-      - checkout
-      - run: |
          ls
-         cd vendor/oneplus/CPH2381
+         cd ~/vendor/oneplus/CPH2381
+         ls
          git init 
          git add .
          git commit -m "first commit"
@@ -50,4 +45,3 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
-      - my-jab-name
