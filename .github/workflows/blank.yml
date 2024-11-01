@@ -13,10 +13,6 @@ jobs:
       - name: Cleanup Space
         uses: rokibhasansagar/slimhub_actions@main
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Set up SSH keys
         run: |
           mkdir -p ~/.ssh
