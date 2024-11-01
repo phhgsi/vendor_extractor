@@ -28,7 +28,7 @@ jobs:
 
       - name: Clone repositories
         run: |
-          git clone https://www.opencode.net/romdumrx/oneplus/CPH2661.git -b qssi_64-user-14-UKQ1.231108.001-1721112167802-release-keys-9985 ~/holi 
+          git clone https://www.opencode.net/romdumprx/oneplus/CPH2661.git ~/holi 
           git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_avalon.git device/oneplus/avalon
           git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_sm7675-commo.git device/oneplus/sm7675-common
           git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
