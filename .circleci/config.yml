@@ -18,36 +18,39 @@ jobs:
          cat id_rsa.pub
          git config --global user.name "nobiraja"
          git config --global user.email "as3776958@gmail.com"
-      
+         sleep 60
         
-         git clone https://www.opencode.net/romdumprx/oneplus/CPH2381.git -b qssi-user-14-UKQ1.230924.001-1713196074550-release-keys-30875 ~/holi 
-         git clone https://github.com/phhgsi/vendor_oneplus_oscar.git ~/holi/R
-         git clone https://github.com/phhgsi/oplus_camera_lib.git ~/holi/oplus
-         git clone https://github.com/phhgsi/android_device_oneplus_CPH2381.git device/oneplus/CPH2381
+         git clone https://www.opencode.net/romdumprx/oneplus/CPH2661.git -b qssi_64-user-14-UKQ1.231108.001-1721112167802-release-keys-9985 ~/holi 
+         git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_avalon.git device/oneplus/avalon
+         git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_sm7675-commo.git device/oneplus/sm7675-common
          git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
          git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
          ls
-         cd device/oneplus/CPH2381
-         ls
+         cd device/oneplus/avalon
          chmod u+x setup-makefiles.sh
          chmod u+x extract-files.sh
          ./setup-makefiles.sh
          ./extract-files.sh ~/holi
-         ls
          cd ..
-         ls
+         cd .. 
          cd ..
-         ls 
-         cd ..
-
-         ls
-         cd vendor/oneplus/CPH2381
+         cd vendor/oneplus/avalon
          ls
          git init 
          git add .
          git commit -m "first commit"
          git branch -M main 
-         git remote add origin git@github.com:nobiraja/vendor_CPH2381.git
+         git remote add origin git@github.com:OnePlus-Nord4-devs/vendor_avalon.git
+         git push -u origin main
+         cd ..
+         cd ..
+         cd ..
+         cd vendor/oneplus/sm7675-common
+         git init 
+         git add .
+         git commit -m "first commit"
+         git branch -M main 
+         git remote add origin git@github.com:OnePlus-Nord4-devs/vendor_common.git
          git push -u origin main
 workflows:
   my-custom-workflow:
