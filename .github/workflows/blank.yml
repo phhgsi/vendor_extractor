@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   my-job-name:
@@ -25,12 +26,14 @@ jobs:
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
           sleep 60
+
       - name: Clone repositories
         run: |
           git clone https://dumps.tadiphone.dev/dumps/xiaomi/chenfeng.git ~/holi 
           git clone https://github.com/cyberDay777/device_xiaomi_chenfeng.git device/xiaomi/chenfeng
           git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
           git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
+
       - name: Set up and run scripts
         run: |
           chmod u+x device/xiaomi/chenfeng/setup-makefiles.sh
@@ -48,4 +51,3 @@ jobs:
           git branch -M main 
           git remote add origin git@github.com:cyberDay777/vendor_xiaomi_chenfeng.git
           git push -u origin main
-          
