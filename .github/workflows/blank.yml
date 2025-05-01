@@ -28,37 +28,25 @@ jobs:
 
       - name: Clone repositories
         run: |
-          git clone https://www.opencode.net/romdumprx/oneplus/CPH2661.git ~/holi 
-          git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_avalon.git device/oneplus/avalon
-          git clone https://github.com/OnePlus-Nord4-devs/android_device_oneplus_sm7675-commo.git device/oneplus/sm7675-common
-          git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
-          git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
-
+          git clone https://dumps.tadiphone.dev/dumps/xiaomi/chenfeng.git ~/holi 
+         git clone https://github.com/cyberDay777/device_xiaomi_chenfeng.git device/xiaomi/chenfeng
+         git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
+         git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
       - name: Set up and run scripts
         run: |
-          chmod u+x device/oneplus/avalon/setup-makefiles.sh
-          chmod u+x device/oneplus/avalon/extract-files.sh
-          cd device/oneplus/avalon
+          chmod u+x device/xiaomi/chenfeng/setup-makefiles.sh
+          chmod u+x device/xiaomi/chenfeng/extract-files.sh
+          cd device/xiaomi/chenfeng
           ./setup-makefiles.sh
           ./extract-files.sh ~/holi
 
       - name: Initialize and push vendor/avalon
         run: |
-          cd vendor/oneplus/avalon
+          cd vendor/xiaomi/chenfeng
           git init 
           git add .
           git commit -m "first commit"
           git branch -M main 
-          git remote add origin git@github.com:OnePlus-Nord4-devs/vendor_avalon.git
-          git push -u origin main
-
-      - name: Initialize and push vendor/sm7675-common
-        run: |
-          cd vendor/oneplus/sm7675-common
-          git init 
-          git add .
-          git commit -m "first commit"
-          git branch -M main 
-          git remote add origin git@github.com:OnePlus-Nord4-devs/vendor_common.git
+          git remote add origin git@github.com:cyberDay777/vendor_xiaomi_chenfeng.git
           git push -u origin main
           
